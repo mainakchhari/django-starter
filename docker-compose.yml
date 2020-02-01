@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: webserver
+      args:
+        version: ${VERSION}
+    env_file: .env
+    ports:
+      - "80:8000"
